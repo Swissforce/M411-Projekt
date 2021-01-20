@@ -17,9 +17,34 @@ public class mainKlasse {
      * @param args
      */
     public static void main(String[] args) {
-        int[] zahlen = datEinlesen(10);
+
+        int[] origZahlen = datEinlesen(1000);
+        int[] zahlen = origZahlen;
+
+        /* --Sarah
+        System.out.println("Gnomesort: \n");
+        Gnomesort gnomesort = new Gnomesort();
+        ausgabeMesswerte(gnomesort.sortGnome(zahlen));
+
+        zahlen = origZahlen;
+
+         */
+
+        // --Martin
+        System.out.println("Bubblesort: \n");
+        Bubblesort bubblesort = new Bubblesort();
+        ausgabeMesswerte(bubblesort.sortBubble(zahlen));
+
+        zahlen = origZahlen;
+
+        // --Martin
+        System.out.println("Quicksort: \n");
+        Quicksort quicksort = new Quicksort();
+        ausgabeMesswerte(quicksort.sortQuick(zahlen));
+
 
         System.out.println(Arrays.toString(zahlen));
+
     }
 
     /**
@@ -62,5 +87,24 @@ public class mainKlasse {
         }
     }
 
+    /**
+     *
+     * @param messwerte
+     *
+     * Diese Funktion printet die Messwerte anschaulich aus
+     */
+    private static void ausgabeMesswerte(double[] messwerte){
+        System.out.println("Iteration Count: " + (int)messwerte[0]);
+        System.out.println("Comparision Count: " + (int)messwerte[1]);
 
+        if (messwerte[2] == 0.0 && messwerte[3] == 0.0){
+            System.out.println("Time Count: " + "nicht gemessen");
+            System.out.println("Memory Count: " + "nicht gemessen");
+        }
+        else {
+            System.out.println("Time Count: " + messwerte[2]);
+            System.out.println("Memory Count: " + messwerte[3]);
+        }
+        System.out.println("\n");
+    }
 }
