@@ -13,22 +13,32 @@ import java.util.Scanner;
 public class mainKlasse {
 
     /**
-     * Main Klasse
      * @param args
+     *
+     * Ist das Main, von wo die Methoden ausgeführt werden
      */
     public static void main(String[] args) {
 
         int[] origZahlen = datEinlesen(1000);
         int[] zahlen = origZahlen;
 
-        /* --Sarah
+        // --Sarah
         System.out.println("Gnomesort: \n");
         Gnomesort gnomesort = new Gnomesort();
         ausgabeMesswerte(gnomesort.sortGnome(zahlen));
 
         zahlen = origZahlen;
 
+
+        /* --Jonas
+        System.out.println("Shakersort: \n");
+        Shakersort shakersort = new Shakersort();
+        ausgabeMesswerte(shakersort.sort(zahlen));
+
+        zahlen = origZahlen;
+
          */
+
 
         // --Martin
         System.out.println("Bubblesort: \n");
@@ -36,6 +46,7 @@ public class mainKlasse {
         ausgabeMesswerte(bubblesort.sortBubble(zahlen));
 
         zahlen = origZahlen;
+
 
         // --Martin
         System.out.println("Quicksort: \n");

@@ -12,12 +12,12 @@ public class Bubblesort {
     }
 
     /**
-     *
      * @param zahlen
-     * @return bubblesortMessungen[]
+     * @return double[] bubblesortMessungen
      *
      * Diese Funktion sortiert das Array und gibt die Messwerte zurück
      */
+
     public double[] sortBubble(int[] zahlen){
         double irerationsCnt = 0;
         double comptCnt = 0;
@@ -33,10 +33,13 @@ public class Bubblesort {
             irerationsCnt++;
             sortiert = true;
 
+            comptCnt++; //Schleifen machen +1, wenn sie hinein/hinaus gehen (ansichtsweise)
             for (int j = 0; j < max - 1; j++) {
                 irerationsCnt++;
+                comptCnt++; //für das for
+
+                comptCnt++; //für das if
                 if (zahlen[j] > zahlen[j+1]){
-                    comptCnt++;
                     tmp = zahlen[j];
                     zahlen[j] = zahlen[j+1];
                     zahlen[j+1] = tmp;
@@ -48,6 +51,7 @@ public class Bubblesort {
         }
         bubblesortMessungen[0] = irerationsCnt;
         bubblesortMessungen[1] = comptCnt;
+
         return bubblesortMessungen;
     }
 }
