@@ -102,7 +102,8 @@ public class mainKlasse {
      *
      * @param messwerte
      *
-     * Diese Funktion printet die Messwerte anschaulich aus
+     * Diese Funktion printet die Messwerte anschaulich aus. Sort Methode als Parameter nehmen (weil es die Messwerte return)
+     * und man so keine unnötige Variable braucht
      */
     private static void ausgabeMesswerte(double[] messwerte){
         System.out.println("Iteration Count: " + (int)messwerte[0]);
