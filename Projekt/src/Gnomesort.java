@@ -6,7 +6,7 @@
  * @since 20.01.2021
  */
 
-public class Gnomesort {
+public class Gnomesort extends Sorter{
 
     public Gnomesort() {
 
@@ -21,7 +21,7 @@ public class Gnomesort {
      * @param array
      * @return int[] gnomesortMessungen
      */
-    public double[] sortGnome(int[] array) {
+    public double[] sort(int[] array) {
 
         double iterationCnt = 0; //Anz. Durchgänge durch while-Schleife
         double compCnt = 0;   //Anz. benötigte Vergleiche
@@ -61,7 +61,7 @@ public class Gnomesort {
         double timeEnd = System.nanoTime();
         timeCnt = timeEnd - timeStart;
 
-        memoryCnt = Runtime.getRuntime().totalMemory();
+        memoryCnt = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
         messArray[0] = iterationCnt;
         messArray[1] = compCnt;

@@ -22,37 +22,44 @@ public class mainKlasse {
         int[] origZahlen = datEinlesen(1000);
         int[] zahlen = origZahlen;
 
-        // --Sarah
-        System.out.println("Gnomesort: \n");
-        Gnomesort gnomesort = new Gnomesort();
-        ausgabeMesswerte(gnomesort.sortGnome(zahlen));
+        Sorter sorter;
 
-        zahlen = origZahlen;
-
-
-        /* --Jonas
-        System.out.println("Shakersort: \n");
-        Shakersort shakersort = new Shakersort();
-        ausgabeMesswerte(shakersort.sort(zahlen));
-
-        zahlen = origZahlen;
-
-         */
 
 
         // --Martin
         System.out.println("Bubblesort: \n");
-        Bubblesort bubblesort = new Bubblesort();
-        ausgabeMesswerte(bubblesort.sortBubble(zahlen));
+        sorter = new Bubblesort();
+        ausgabeMesswerte(sorter.sort(zahlen));
 
         zahlen = origZahlen;
 
-
         // --Martin
         System.out.println("Quicksort: \n");
-        Quicksort quicksort = new Quicksort();
-        ausgabeMesswerte(quicksort.sortQuick(zahlen));
+        sorter = new Quicksort();
+        ausgabeMesswerte(sorter.sort(zahlen));
 
+        zahlen = origZahlen;
+
+        // --Marko
+        System.out.println("Insertionsort: \n");
+        sorter = new insertionSort();
+        ausgabeMesswerte(sorter.sort(zahlen));
+
+        zahlen = origZahlen;
+
+        // --Sarah
+        System.out.println("Gnomesort: \n");
+        sorter = new Gnomesort();
+        ausgabeMesswerte(sorter.sort(zahlen));
+
+        zahlen = origZahlen;
+
+        /* --Jonas
+        System.out.println("Shakersort: \n");
+        sorter = new Shakersort();
+        ausgabeMesswerte(sorter.sort(zahlen));
+
+         */
 
         System.out.println(Arrays.toString(zahlen));
 
@@ -108,15 +115,10 @@ public class mainKlasse {
     private static void ausgabeMesswerte(double[] messwerte){
         System.out.println("Iteration Count: " + (int)messwerte[0]);
         System.out.println("Comparision Count: " + (int)messwerte[1]);
+        System.out.println("Time Count: " + Double.parseDouble(String.valueOf(messwerte[2])) / 1000000 + " ms");    //Konvertiert von Nanosekunde zu Millisekunde
+        System.out.println("Memory Count: " + messwerte[3]);
 
-        if (messwerte[2] == 0.0 && messwerte[3] == 0.0){
-            System.out.println("Time Count: " + "nicht gemessen");
-            System.out.println("Memory Count: " + "nicht gemessen");
-        }
-        else {
-            System.out.println("Time Count: " + messwerte[2]);
-            System.out.println("Memory Count: " + messwerte[3]);
-        }
-        System.out.println("\n");
+        System.out.println("------------------------\n");
+
     }
 }
