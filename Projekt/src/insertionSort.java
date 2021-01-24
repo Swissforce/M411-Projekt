@@ -4,7 +4,7 @@
  *
  * @author Marko Joksimovic
  * @version 1.0
- * @date 24.01.2021
+ * @since 24.01.2021
  */
 
 public class insertionSort {
@@ -24,14 +24,18 @@ public class insertionSort {
         double timeStart = System.nanoTime();
 
         int n = arr.length;
+        comparisonCnt++;
         for (int i = 1; i < n; ++i) {
             iterationCnt++;
+            comparisonCnt++;
             int key = arr[i];
             int j = i - 1;
 
+            comparisonCnt++;
             while (j >= 0 && arr[j] > key) {
                 arr[j + 1] = arr[j];
                 j = j - 1;
+                iterationCnt++;
                 comparisonCnt++;
             }
             arr[j + 1] = key;
