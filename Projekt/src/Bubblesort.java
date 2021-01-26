@@ -6,7 +6,7 @@
  * @since 20.01.2021
  */
 
-public class Bubblesort {
+public class Bubblesort extends Sorter{
     public Bubblesort(){
 
     }
@@ -18,9 +18,10 @@ public class Bubblesort {
      * Diese Funktion sortiert das Array und gibt die Messwerte zurück
      */
 
-    public double[] sortBubble(int[] zahlen){
+    public double[] sort(int[] zahlen){
         double irerationsCnt = 0;
         double comptCnt = 0;
+        double timeCnt;
         double[] bubblesortMessungen = new double[4];
 
         //ab hier fängt das normale Program an
@@ -29,6 +30,7 @@ public class Bubblesort {
         int tmp;
         boolean sortiert = false;
 
+        timeCnt = System.nanoTime();
         while (!sortiert){
             irerationsCnt++;
             sortiert = true;
@@ -51,6 +53,8 @@ public class Bubblesort {
         }
         bubblesortMessungen[0] = irerationsCnt;
         bubblesortMessungen[1] = comptCnt;
+        bubblesortMessungen[2] = System.nanoTime() - timeCnt;
+        bubblesortMessungen[3] = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
         return bubblesortMessungen;
     }

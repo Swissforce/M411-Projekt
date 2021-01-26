@@ -7,7 +7,7 @@
  * @since 24.01.2021
  */
 
-public class insertionSort {
+public class insertionSort extends Sorter{
 
     public insertionSort(){
     }
@@ -44,7 +44,7 @@ public class insertionSort {
         double timeEnd =  System.nanoTime();
         timeCompletion = timeEnd - timeStart;
 
-        memoryCnt = Runtime.getRuntime().totalMemory();
+        memoryCnt = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
         messwerte[0] = iterationCnt;
         messwerte[1] = comparisonCnt;

@@ -7,7 +7,7 @@
  * @since 20.01.2021
  */
 
-public class Quicksort {
+public class Quicksort extends Sorter{
     public Quicksort(){
 
     }
@@ -20,8 +20,13 @@ public class Quicksort {
      * @param zahlen
      * @return dobule[] quicksortMessungen
      */
-    public double[] sortQuick(int[] zahlen){
+    public double[] sort(int[] zahlen){
+        double timeCnt = System.nanoTime();
+
         quickSort(0,zahlen.length - 1,zahlen);
+
+        quicksortMessungen[2] = System.nanoTime() - timeCnt;
+        quicksortMessungen[3] = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
         return quicksortMessungen;
     }
