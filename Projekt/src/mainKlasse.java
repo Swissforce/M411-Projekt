@@ -54,12 +54,11 @@ public class mainKlasse {
 
         zahlen = origZahlen;
 
-        /* --Jonas
+        //  --Jonas
         System.out.println("Shakersort: \n");
-        sorter = new Shakersort();
+        sorter = new Shakesort();
         ausgabeMesswerte(sorter.sort(zahlen));
 
-         */
 
         System.out.println(Arrays.toString(zahlen));
 
