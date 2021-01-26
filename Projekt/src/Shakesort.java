@@ -62,7 +62,7 @@ public class Shakesort {
         double finish = System.nanoTime();
 
         timeCnt =(finish - start);
-        memoryCnt = Runtime.getRuntime().totalMemory();
+        memoryCnt = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
         messArray[0] = iterationCnt;
         messArray[1] = compCnt;
